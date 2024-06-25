@@ -41,3 +41,13 @@ saveRDS(model4, file=here("models","model4.rds"))
 summary(model4)
 # Rhat is high for all
 # Evidence that we can't predict sentence type by nuclear_config*variety
+
+model5 <- brm(question ~ nuclear_configuration * variety,
+              family = bernoulli(),
+              data = nuclear_configs)
+summary(model5)
+
+model6 <- brm(question ~ nuclear_configuration,
+              family = bernoulli(),
+              data = nuclear_configs)
+summary(model6)

@@ -22,8 +22,8 @@ nuclear_configs <- read.table(here(
     nuclear_pitch_accent = gsub("[^H*L!]", "", nuclear_pitch_accent)
   ) %>%
   separate(file_name,
-           into = c("variety",
-                    "match_mismatch",
+           into = c("speaker_variety",
+                    "condition",
                     "sentence_type",
                     "sentence"
            ),
@@ -37,8 +37,8 @@ nuclear_configs <- read.table(here(
     nuclear_configuration = factor(nuclear_configuration),
     sentence = gsub("-"," ", sentence),
     sentence = gsub(".TextGrid","", sentence),
-    variety = factor(variety),
-    match_mismatch = factor(match_mismatch),
+    speaker_variety = factor(speaker_variety),
+    condition = factor(condition),
     sentence_type = factor(sentence_type)
   )
 
@@ -58,6 +58,21 @@ nuclear_config_lookup <- setNames(
   nuclear_levels_tibble$nuclear_configuration)
 
 # make new column in nuclear_configs with codes for nuclear configs
+# add col for it's a question or not
 nuclear_configs <- nuclear_configs %>%
   mutate(
-    nuclear_configurations_coded = nuclear_config_lookup[nuclear_configuration])
+    nuclear_configurations_coded = nuclear_config_lookup[nuclear_configuration],
+    question = case_when(
+      sentence_type %in% c("declarative-broad-focus","declarative-narrow-focus") ~ 0,
+      sentence_type %in% c("interrogative-partial-wh", "interrogative-total-yn") ~ 1
+    )
+  )
+
+nuclear_configs_data <- nuclear_configs %>%
+  select(
+    sentence,
+    speaker_variety,
+    condition,
+    sentence_type,
+    nuclear_configurations_coded
+  )
