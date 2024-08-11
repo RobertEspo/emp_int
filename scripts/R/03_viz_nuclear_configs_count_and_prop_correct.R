@@ -21,6 +21,20 @@ a_nc_q_count <- a_nc_q %>%
   left_join(
     nc_q_count,
     by = c("nuclear_configuration", "is_question")
+  ) # %>%
+  filter(
+    count_configs < 7
+  ) %>%
+  left_join(
+    nuclear_configs
+  ) %>%
+  select(
+    nuclear_configuration,
+    count_configs,
+    speaker_variety,
+    condition,
+    sentence_type,
+    sentence
   )
 
 a_nc_q_count %>% ggplot(

@@ -25,7 +25,7 @@ nc_d_sq_dialect <- nuclear_configs %>%
 # distinct nuclear configs for statement/questions
 # counts
 nc_d_sq <- nuclear_configs %>%
-  group_by(question, nuclear_configuration) %>%
+  group_by(is_question, nuclear_configuration) %>%
   summarize(count_configs = n())
 
 # all distinct nuclear configs by sentence type (ignoring dialect)
@@ -41,7 +41,7 @@ nc_unique <- nuclear_configs %>%
 
 # bar graph comparing nuclear configs produced for question or declarative
 nc_d_sq %>% ggplot(
-  aes(x = nuclear_configuration, y = count_configs, color = factor(question))
+  aes(x = nuclear_configuration, y = count_configs, color = is_question)
 ) +
   geom_bar(stat = "identity", position = "dodge")
 
