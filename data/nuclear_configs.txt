@@ -214,7 +214,7 @@ chilean_match_interrogative-partial-wh_Por-que-abre-el-regalo.TextGrid L* H\%
 chilean_match_interrogative-partial-wh_Por-que-ama-la-navidad.TextGrid L* H\% 
 chilean_match_interrogative-partial-wh_Por-que-hablaba-del-agua.TextGrid L* H\% 
 chilean_match_interrogative-partial-wh_Por-que-iba-a-Bolivia.TextGrid L* H\% 
-chilean_match_interrogative-total-yn_Ana-lleva-el-abrigo.TextGrid L* H\% 
+chilean_match_interrogative-total-yn_Ana-lleva-el-abrigo.TextGrid H+L* H\% 
 chilean_match_interrogative-total-yn_Daniel-iba-a-Bolivia.TextGrid H+L* H\% 
 chilean_match_interrogative-total-yn_David-leia-el-libro.TextGrid H+L* H\% 
 chilean_match_interrogative-total-yn_Emilio-ama-la-marcha.TextGrid H+L* H\% 
@@ -381,7 +381,7 @@ mexican_mismatch_interrogative-total-yn_La-maestra-vive-en-Paris.TextGrid L* H\%
 mexican_mismatch_interrogative-total-yn_La-nina-lava-el-plato.TextGrid L* H\% 
 mexican_mismatch_interrogative-total-yn_Mi-madre-come-la-fruta.TextGrid L* H\% 
 mexican_mismatch_interrogative-total-yn_Mi-novio-viene-del-lago.TextGrid L+H* H\% 
-mexican_mismatch_interrogative-total-yn_Mi-tia-odia-la-lluvia.TextGrid L* L\% 
+mexican_mismatch_interrogative-total-yn_Mi-tia-odia-la-lluvia.TextGrid L* H\% 
 peruvian_match_declarative-broad-focus_Ana-lleva-el-abrigo.TextGrid L* L\% 
 peruvian_match_declarative-broad-focus_Daniel-iba-a-Bolivia.TextGrid L* L\% 
 peruvian_match_declarative-broad-focus_David-leia-el-libro.TextGrid L* L\% 

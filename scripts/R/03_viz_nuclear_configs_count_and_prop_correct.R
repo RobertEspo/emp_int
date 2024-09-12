@@ -1,3 +1,10 @@
+# Source libs ------------------------------------------------------------------
+
+source(here::here("scripts", "R", "00_libs.R"))
+source(here("scripts","R","01_tidy_nuclear_configs.R"))
+
+# ------------------------------------------------------------------------------
+
 # accurate response by nuclear config X declarative/question
 
 a_nc_q <- all_data %>%
@@ -51,3 +58,5 @@ a_nc_q_count %>% ggplot(
   )
 
 ggsave("nuclear_configs_prop_correct.png", width = 20, height = 6)
+
+kable(a_nc_q_count)

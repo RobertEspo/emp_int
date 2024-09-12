@@ -33,13 +33,14 @@ nuclear_configs <- read.table(here(
     nuclear_configuration = paste(
       nuclear_pitch_accent, 
       boundary_tone, sep = "_"),
-    nuclear_configuration = factor(nuclear_configuration),
     sentence = gsub("-"," ", sentence),
     sentence = gsub(".TextGrid","", sentence),
     is_question = case_when(
       sentence_type %in% c("declarative-broad-focus","declarative-narrow-focus") ~ 0,
       sentence_type %in% c("interrogative-partial-wh", "interrogative-total-yn") ~ 1,
-    )
+    ),
+    is_question = factor(is_question),
+    nuclear_configuration = factor(nuclear_configuration)
   )
 
 # =========================================================================== #
@@ -71,10 +72,9 @@ all_data <- read_csv(here("data","learners_all_tasks_tidy.csv")) %>%
     eq_std,
     condition,
     sentence_type
-  ) # %>%
+  ) %>%
     mutate(
       speaker_variety = factor(speaker_variety),
       condition = factor(condition),
       sentence_type = factor(sentence_type),  
-      is_question = factor(is_question)
     )

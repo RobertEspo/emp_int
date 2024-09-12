@@ -26,6 +26,3 @@ empathy/intonation experiment
 
 	>>textgrids_stress_marked
 		textgrids marked on Syllable tier for lexical stress (only for words that receive pitch accents)
-
-NOTES TO DISCUSS W/ JOSEPH:
-I think it'll be necessary to remove oxytones.
